@@ -1,23 +1,31 @@
 {
   "name": "rose",
-  "version": "1.0.0",
-  "description": "",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "build": "npm run build-css && npm run pandoc-convert && npm run copy-files",
-    "build-css": "tailwindcss -i ./rose/css/main.css -o ./dist/css/main.css",
-    "copy-files": "node rose/copy_files.js",
-    "pandoc-convert": "pandoc src/homepage.md --template=rose/homepage_template.html -o dist/index.html",
-    "watch": "nodemon --exec npm run build -e md,html --watch src --watch rose"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "ncp": "^2.0.0",
-    "pandoc": "^0.2.0",
-    "pandoc-bin": "^0.2.0",
-    "tailwindcss": "^3.3.2",
+    "autoprefixer": "^10.4.14",
     "postcss": "^8.4.25",
-    "autoprefixer": "^10.4.14"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "eslint": "^8.44.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.0"
   }
 }

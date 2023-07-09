@@ -1,7 +1,0 @@
-.hero-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.hero-section .hero-image img {
-  border-radius: 24px;
-}/*# sourceMappingURL=styles.css.map */
