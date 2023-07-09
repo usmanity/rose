@@ -1,0 +1,17 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+dependencies:
+  pandoc:
+    specifier: ^0.2.0
+    version: 0.2.0
+
+packages:
+
+  /pandoc@0.2.0:
+    resolution: {integrity: sha512-OD/Sqpv7QYwxgNpzLeEWPkN7+BQgJfONW5UUiEBwYItfszPUU4kS9fA4f0GpWoN1TdGW899dI/7vioMgchtNnQ==}
+    engines: {node: '>= 0.4.0'}
+    dev: false
