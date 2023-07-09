@@ -4,5 +4,12 @@
     "heading": "Hello! I'm Rose.",
     "description": "Welcome to my colorful corner of the design world! I'm fueled by curiosity and driven by the need to unleash my creative superpowers.",
     "photo": "/images/rose.webp"
+  },
+  "contact": {
+    "email": "rose@example.com",
+    "phone": "415-555-1234"
+  },
+  "socials": {
+    "instagram": "usmanity"
   }
 }
