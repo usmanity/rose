@@ -30,6 +30,7 @@ const Navbar = () => {
             <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
               {projectsData.map((project) => {
                 return (
+                  // @ts-ignore
                   <ListItem
                     title={project.name}
                     onClick={() => {
@@ -57,12 +58,14 @@ const Navbar = () => {
 };
 
 const ListItem = React.forwardRef(
-  ({ className, children, title, ...props }, forwardedRef) => (
+  // @ts-ignore-next-line
+  ({ children, title, ...props }, forwardedRef) => (
     <li>
       <NavigationMenu.Link asChild>
         <a
           className="focus:shadow-[0_0_0_2px] focus:shadow-violet7 hover:bg-mauve3 block select-none rounded-[6px] p-3 text-[15px] leading-none no-underline outline-none transition-colors"
           {...props}
+          // @ts-ignore-next-line
           ref={forwardedRef}
         >
           <div className="text-violet12 mb-[5px] font-medium leading-[1.2]">

@@ -1,11 +1,13 @@
+//@ts-nocheck
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { useLoaderData, redirect, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import projectsData from "../../content/projects.json";
+import { ProjectType } from "../types/Project";
 
-export function loader({ params }) {
-  return params.projectName;
+export function loader({ params }: LoaderFunctionArgs): string | undefined {
+  return params?.projectName as string;
 }
 
 export default function ProjectPanel() {
@@ -13,7 +15,7 @@ export default function ProjectPanel() {
   const projectName = useLoaderData();
   const [open, setOpen] = useState(true);
 
-  const project = projectsData.find((project) => {
+  const project: ProjectType | undefined = projectsData.find((project) => {
     return project.name === projectName;
   });
 
@@ -51,7 +53,7 @@ export default function ProjectPanel() {
                     <div className="px-4 sm:px-6">
                       <div className="flex items-start justify-between">
                         <Dialog.Title className="text-base font-semibold leading-6 text-gray-900">
-                          {projectName}
+                          {projectName as string}
                         </Dialog.Title>
                         <div className="ml-3 flex h-7 items-center">
                           <button
@@ -66,7 +68,7 @@ export default function ProjectPanel() {
                       </div>
                     </div>
                     <div className="text-gray-800 relative mt-6 flex-1 px-4 sm:px-6">
-                      {project.description}
+                      {project?.description as string}
                     </div>
                   </div>
                 </Dialog.Panel>
