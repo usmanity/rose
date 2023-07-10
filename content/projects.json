@@ -3,7 +3,8 @@
     "name": "Coolest Design Agency",
     "role": "Design consultant",
     "cover": "jess-bailey-project-background.jpg",
-    "link": "/coolest"
+    "link": "/coolest",
+    "description": "A long project that took me 3 years to finish"
   },
   {
     "//comment": "project file names don't matter",
