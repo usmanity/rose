@@ -33,33 +33,30 @@ export default function ProjectPanel() {
       }}
     >
       <Dialog as="div" className="relative z-10" onClose={close}>
-        <div className="fixed inset-0" />
-
         <div className="fixed inset-0 overflow-hidden">
-          <div className="absolute z-1 w-screen h-screen backdrop-blur-sm"></div>
           <div className="absolute inset-0 overflow-hidden">
-            <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10 sm:pl-16">
+            <div className="pointer-events-none fixed inset-0 flex max-w-full">
               <Transition.Child
                 appear={true}
                 as={Fragment}
                 enter="transform transition-all ease-in-out duration-700"
-                enterFrom="translate-x-full opacity-0"
-                enterTo="translate-x-0 opacity-100"
+                enterFrom="opacity-0"
+                enterTo="opacity-100"
                 leave="transform transition-all ease-in-out duration-700"
-                leaveFrom="translate-x-0"
-                leaveTo="translate-x-full"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
               >
-                <Dialog.Panel className="pointer-events-auto w-screen max-w-2xl">
-                  <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+                <Dialog.Panel className="pointer-events-auto w-full">
+                  <div className="flex h-full flex-col overflow-y-auto bg-white dark:bg-gray-600 dark:text-white py-6 shadow-xl">
                     <div className="px-4 sm:px-6">
                       <div className="flex items-start justify-between">
-                        <Dialog.Title className="text-base font-semibold leading-6 text-gray-900">
+                        <Dialog.Title className="text-base font-semibold leading-6 text-gray-900 dark:text-white">
                           {projectName as string}
                         </Dialog.Title>
                         <div className="ml-3 flex h-7 items-center">
                           <button
                             type="button"
-                            className="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none"
+                            className="rounded-md text-gray-400 hover:text-gray-500 focus:outline-none "
                             onClick={close}
                           >
                             <span className="sr-only">Close panel</span>
@@ -68,7 +65,7 @@ export default function ProjectPanel() {
                         </div>
                       </div>
                     </div>
-                    <div className="text-gray-800 relative mt-6 flex-1 px-4 sm:px-6">
+                    <div className="text-gray-800 dark:text-white relative mt-6 flex-1 px-4 sm:px-6">
                       {project?.description as string}
                     </div>
                   </div>
