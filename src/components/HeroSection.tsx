@@ -1,4 +1,5 @@
 import about from "../../content/about.json";
+import { AppPrefix } from "../main";
 
 export function HeroSection() {
   return (
@@ -11,7 +12,7 @@ export function HeroSection() {
       </div>
       <div className="col-span-1">
         <img
-          src={`/public/images/${about.hero.photo}`}
+          src={`/${AppPrefix}/images/${about.hero.photo}`}
           className="rounded-md"
         />
       </div>

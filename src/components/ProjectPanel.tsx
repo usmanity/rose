@@ -5,6 +5,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import projectsData from "../../content/projects.json";
 import { ProjectType } from "../types/Project";
+import { AppPrefix } from "../main";
 
 export function loader({ params }: LoaderFunctionArgs): string | undefined {
   return params?.projectName as string;
@@ -28,7 +29,7 @@ export default function ProjectPanel() {
       show={open}
       as={Fragment}
       afterLeave={() => {
-        navigate("/");
+        navigate(`/${AppPrefix as string}/`);
       }}
     >
       <Dialog as="div" className="relative z-10" onClose={close}>

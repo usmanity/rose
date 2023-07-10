@@ -3,6 +3,7 @@ import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { CaretDownIcon } from "@radix-ui/react-icons";
 import projectsData from "../../content/projects.json";
 import { useNavigate } from "react-router-dom";
+import { AppPrefix } from "../main";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -34,7 +35,9 @@ const Navbar = () => {
                   <ListItem
                     title={project.name}
                     onClick={() => {
-                      navigate(`/project/${project.name}`);
+                      navigate(
+                        `/${AppPrefix as string}/project/${project.name}`
+                      );
                     }}
                   >
                     {project.description}
