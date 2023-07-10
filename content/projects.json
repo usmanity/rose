@@ -2,12 +2,21 @@
   {
     "name": "Coolest Design Agency",
     "role": "Design consultant",
-    "cover": "/images/jess-bailey-project-background.jpg"
+    "cover": "jess-bailey-project-background.jpg",
+    "link": "/coolest"
   },
   {
     "//comment": "project file names don't matter",
     "name": "Large Corp",
     "role": "Assistant on Logo Design",
-    "cover": "/images/hal-gatewood-mocks.jpg"
+    "cover": "hal-gatewood-mocks.jpg",
+    "link": "/large-corp"
+  },
+  {
+    "//comment": "project file names don't matter",
+    "name": "Large Corp",
+    "role": "Assistant on Logo Design",
+    "cover": "hal-gatewood-mocks.jpg",
+    "link": "/large-corp-2"
   }
 ]

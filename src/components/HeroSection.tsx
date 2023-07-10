@@ -10,7 +10,10 @@ export function HeroSection() {
         </p>
       </div>
       <div className="col-span-1">
-        <img src={about.hero.photo} className="rounded-md" />
+        <img
+          src={`/public/images/${about.hero.photo}`}
+          className="rounded-md"
+        />
       </div>
     </div>
   );
