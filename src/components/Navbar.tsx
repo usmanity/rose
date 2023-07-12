@@ -38,6 +38,7 @@ const Navbar = () => {
                 return (
                   // @ts-ignore
                   <ListItem
+                    key={project.name}
                     title={project.name}
                     onClick={() => {
                       navigate(

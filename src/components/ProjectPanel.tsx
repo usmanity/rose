@@ -1,17 +1,19 @@
 //@ts-nocheck
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import projectsData from "../../content/projects.json";
 import { ProjectType } from "../types/Project";
 import { AppPrefix } from "../main";
+import { Remark } from "react-remark";
 
 export function loader({ params }: LoaderFunctionArgs): string | undefined {
   return params?.projectName as string;
 }
 
 export default function ProjectPanel() {
+  const [markdownContent, setMarkdownContent] = useState("");
   const navigate = useNavigate();
   const projectName = useLoaderData();
   const [open, setOpen] = useState(true);
@@ -20,9 +22,24 @@ export default function ProjectPanel() {
     return project.name === projectName;
   });
 
+  const details_file = project?.details_file;
   const close = () => {
     setOpen(false);
   };
+
+  useEffect(() => {
+    const getStuff = async () => {
+      const resp = await fetch(
+        `/${AppPrefix as string}/projects/${details_file}`
+      );
+      const data = await resp.text();
+
+      console.log({ data });
+      setMarkdownContent(data);
+    };
+    getStuff().void;
+  }, [setMarkdownContent]);
+
   return (
     <Transition.Root
       appear={true}
@@ -37,7 +54,6 @@ export default function ProjectPanel() {
           <div className="absolute inset-0 overflow-hidden">
             <div className="pointer-events-none fixed inset-0 flex max-w-full">
               <Transition.Child
-                appear={true}
                 as={Fragment}
                 enter="transform transition-all ease-in-out duration-700"
                 enterFrom="opacity-0"
@@ -51,7 +67,7 @@ export default function ProjectPanel() {
                     <div className="px-4 sm:px-6">
                       <div className="flex items-start justify-between">
                         <Dialog.Title className="text-base font-semibold leading-6 text-gray-900 dark:text-white">
-                          {projectName as string}
+                          {/* {projectName as string} */}
                         </Dialog.Title>
                         <div className="ml-3 flex h-7 items-center">
                           <button
@@ -66,7 +82,7 @@ export default function ProjectPanel() {
                       </div>
                     </div>
                     <div className="text-gray-800 dark:text-white relative mt-6 flex-1 px-4 sm:px-6">
-                      {project?.description as string}
+                      <Remark>{`${markdownContent}`}</Remark>
                     </div>
                   </div>
                 </Dialog.Panel>

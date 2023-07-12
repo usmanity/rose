@@ -5,4 +5,5 @@ export type ProjectType = {
   role: string;
   cover: string;
   link?: string;
+  details_file?: string;
 }

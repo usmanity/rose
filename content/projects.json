@@ -4,14 +4,16 @@
     "role": "Design consultant",
     "cover": "jess-bailey-project-background.jpg",
     "link": "/coolest",
-    "description": "A long project that took me 3 years to finish"
+    "description": "A long project that took me 3 years to finish",
+    "details_file": "large-corp-2.md"
   },
   {
     "//comment": "project file names don't matter",
     "name": "Large Corp",
     "role": "Assistant on Logo Design",
     "cover": "hal-gatewood-mocks.jpg",
-    "link": "/large-corp"
+    "link": "/large-corp",
+    "details_file": "large-corp-2.md"
   },
   {
     "//comment": "project file names don't matter",
