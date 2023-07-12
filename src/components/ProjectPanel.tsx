@@ -81,8 +81,34 @@ export default function ProjectPanel() {
                         </div>
                       </div>
                     </div>
-                    <div className="text-gray-800 dark:text-white relative mt-6 flex-1 px-4 sm:px-6">
-                      <Remark>{`${markdownContent}`}</Remark>
+                    <div className="text-gray-800 dark:text-white relative mt-6 flex-1 px-4 sm:px-6 mx-auto max-w-3xl">
+                      <Remark
+                        className=""
+                        rehypeReactOptions={{
+                          components: {
+                            h1: ({ children }) => (
+                              <h1 className="text-4xl font-bold my-4">
+                                {children}
+                              </h1>
+                            ),
+                            h2: ({ children }) => (
+                              <h1 className="text-3xl font-bold my-3">
+                                {children}
+                              </h1>
+                            ),
+                            h3: ({ children }) => (
+                              <h1 className="text-2xl font-bold my-2">
+                                {children}
+                              </h1>
+                            ),
+                            p: ({ children }) => (
+                              <p className="prose dark:prose-dark text-md leading-tight">
+                                {children}
+                              </p>
+                            ),
+                          },
+                        }}
+                      >{`${markdownContent}`}</Remark>
                     </div>
                   </div>
                 </Dialog.Panel>

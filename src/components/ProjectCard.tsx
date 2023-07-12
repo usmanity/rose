@@ -14,8 +14,10 @@ export function ProjectCard({ data }: { data: ProjectDataType }) {
         <div className="px-2 pt-2 aspect-video overflow-hidden">
           <img src={`/${AppPrefix as string}/images/${data.cover}`} />
         </div>
-        <div className="px-4 py-2">{data.name}</div>
-        <div className="px-4 pt-1 pb-3">{data.role}</div>
+        <div className="text-xl font-semibold px-4 mt-2">{data.name}</div>
+        <div className="text-gray-800 dark:text-gray-300 px-4 pt-1 pb-3">
+          {data.role}
+        </div>
       </div>
     </Link>
   );
