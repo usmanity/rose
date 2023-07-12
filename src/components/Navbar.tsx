@@ -16,7 +16,7 @@ const Navbar = () => {
         <NavigationMenu.Item>
           <NavigationMenu.Link
             className="text-violet11 hover:bg-violet3 dark:hover:bg-gray-700 focus:shadow-violet7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px] dark:text-gray-200"
-            href={`/${AppPrefix as string}/`}
+            href={`${AppPrefix as string}/`}
           >
             About
           </NavigationMenu.Link>
@@ -42,7 +42,7 @@ const Navbar = () => {
                     title={project.name}
                     onClick={() => {
                       navigate(
-                        `/${AppPrefix as string}/project/${project.name}`
+                        `${AppPrefix as string}/project/${project.name}`
                       );
                     }}
                   >

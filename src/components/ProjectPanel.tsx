@@ -30,7 +30,7 @@ export default function ProjectPanel() {
   useEffect(() => {
     const getStuff = async () => {
       const resp = await fetch(
-        `/${AppPrefix as string}/projects/${details_file}`
+        `${AppPrefix as string}/projects/${details_file}`
       );
       const data = await resp.text();
 
@@ -46,7 +46,7 @@ export default function ProjectPanel() {
       show={open}
       as={Fragment}
       afterLeave={() => {
-        navigate(`/${AppPrefix as string}/`);
+        navigate(`${AppPrefix as string}/`);
       }}
     >
       <Dialog as="div" className="relative z-10" onClose={close}>

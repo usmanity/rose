@@ -6,16 +6,16 @@ import Root from "./routes/root";
 import ProjectPanel from "./components/ProjectPanel.tsx";
 import { loader as projectLoader } from "./components/ProjectPanel.tsx";
 
-export const AppPrefix = "rose";
+export const AppPrefix = "";
 
 const router = createBrowserRouter([
   {
-    path: `/${AppPrefix as string}/`,
+    path: `${AppPrefix as string}/`,
     element: <Root />,
     children: [
       { index: true, element: <></> },
       {
-        path: `/${AppPrefix as string}/project/:projectName`,
+        path: `${AppPrefix as string}/project/:projectName`,
         loader: projectLoader,
         element: <ProjectPanel />,
       },

@@ -12,7 +12,7 @@ export function HeroSection() {
       </div>
       <div className="col-span-1">
         <img
-          src={`/${AppPrefix}/images/${about.hero.photo}`}
+          src={`${AppPrefix}/images/${about.hero.photo}`}
           className="rounded-md"
         />
       </div>
