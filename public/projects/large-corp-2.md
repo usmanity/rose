@@ -22,7 +22,7 @@ Here's a wireframe of the app's main screen:
 Once the wireframes were finalized, I moved on to the visual design phase. I created a style guide and established a color palette, typography, and iconography for the app.
 
 Here's a sneak peek of the app's visual design:
-![Visual Design](https://via.placeholder.com/500x300)
+![Visual Design](/images/hal-gatewood-mocks.jpg)
 
 ### Prototyping
 
